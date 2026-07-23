@@ -461,4 +461,18 @@ input[type="date"] {
   -webkit-appearance: none;
   appearance: none;
 }
+  .field-group--inline > .field {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.field-group--inline input[type="date"] {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  inline-size: 100%;
+  min-inline-size: 0;
+  overflow: hidden;
+}
 }
