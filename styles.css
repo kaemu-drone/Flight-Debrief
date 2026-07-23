@@ -448,4 +448,8 @@ textarea::placeholder {
     line-height: 1.4;
     letter-spacing: 0.08em;
 }
+  input[type="text"],
+input[type="date"] {
+  min-height: 44px;
+}
 }
