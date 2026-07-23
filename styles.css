@@ -447,32 +447,18 @@ textarea::placeholder {
     color: #999;
     line-height: 1.4;
     letter-spacing: 0.08em;
-}
-  input[type="text"],
-input[type="date"] {
-  min-height: 44px;
-}
-  input[type="date"] {
-  display: block;
+}}
+
+/* ── iPhone Safari: date field overflow fix ── */
+.field-group--inline > .field {
   width: 100%;
-  max-width: 100%;
   min-width: 0;
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  appearance: none;
 }
-  .field-group--inline > .field {
+
+input[type="date"] {
+  display: block;
   width: 100%;
   min-width: 0;
   max-width: 100%;
 }
 
-.field-group--inline input[type="date"] {
-  width: 100%;
-  min-width: 0;
-  max-width: 100%;
-  inline-size: 100%;
-  min-inline-size: 0;
-  overflow: hidden;
-}
-}
