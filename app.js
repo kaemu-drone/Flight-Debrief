@@ -31,12 +31,47 @@
   var printBtn = document.getElementById("print-btn");
   var saveTimer = null;
 
-  function formatDateForDisplay(isoDate) {
-    if (!isoDate) return "";
-    var parts = isoDate.split("-");
-    if (parts.length !== 3) return isoDate;
-    return parts[0] + "年" + Number(parts[1]) + "月" + Number(parts[2]) + "日";
+ function formatDateForDisplay(dateValue) {
+  if (!dateValue) return "";
+
+  var parts = dateValue.split(/[-/]/);
+
+  if (parts.length !== 3) return dateValue;
+
+  return (
+    parts[0] +
+    "年" +
+    Number(parts[1]) +
+    "月" +
+    Number(parts[2]) +
+    "日"
+  );
+}
+
+function formatDateInput(value) {
+  var numbers = value.replace(/\D/g, "").slice(0, 8);
+
+  if (numbers.length <= 4) {
+    return numbers;
   }
+
+  if (numbers.length <= 6) {
+    return numbers.slice(0, 4) + "/" + numbers.slice(4);
+  }
+
+  return (
+    numbers.slice(0, 4) +
+    "/" +
+    numbers.slice(4, 6) +
+    "/" +
+    numbers.slice(6)
+  );
+}
+
+fields.date.addEventListener("input", function () {
+  fields.date.value = formatDateInput(fields.date.value);
+});
+
 
   function setTodayIfEmpty() {
     if (!fields.date.value) {
@@ -44,7 +79,7 @@
       var y = today.getFullYear();
       var m = String(today.getMonth() + 1).padStart(2, "0");
       var d = String(today.getDate()).padStart(2, "0");
-      fields.date.value = y + "-" + m + "-" + d;
+      fields.date.value = y + "/" + m + "/" + d;
     }
   }
 
