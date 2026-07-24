@@ -336,10 +336,6 @@ textarea::placeholder {
 
   .print-sheet {
   display: block !important;
-  position: relative;
-  width: 186mm;
-  min-height: 277mm;
-  margin: 0 auto;
   }
 
   .print-header {
@@ -414,9 +410,16 @@ textarea::placeholder {
   }
 
 .print-section h2 {
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1mm;
+  padding: 1mm 2mm;
   background: transparent;
   border-left: 2pt solid #333;
   border-bottom: 0.5pt solid #ccc;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
 }
 
   .print-content {
@@ -433,11 +436,12 @@ textarea::placeholder {
   }
 
 .print-footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 2mm;
-  width: 100%;
+  position: fixed;
+  left: 50%;
+  right: auto;
+  bottom: 6mm;
+  transform: translateX(-50%);
+  width: max-content;
   text-align: center;
 }
 
@@ -447,6 +451,7 @@ textarea::placeholder {
   color: #666;
   line-height: 1.4;
   letter-spacing: 0.08em;
+  white-space: nowrap;
 }}
 
 /* ── iPhone Safari: date field overflow fix ── */
