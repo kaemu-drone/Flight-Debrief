@@ -435,9 +435,11 @@ textarea::placeholder {
     color: #bbb;
   }
 
+
 .print-footer {
   position: static;
-  margin-top: 10mm;
+  align-self: end;
+  margin-top: 6mm;
   text-align: center;
   break-inside: avoid;
 }
@@ -458,18 +460,14 @@ body {
 }
 
 .print-sheet {
+  display: grid !important;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 250mm !important;
   height: auto !important;
-  min-height: 0 !important;
+  box-sizing: border-box;
   break-after: avoid;
   page-break-after: avoid;
 }
-
-
-
-
-
-
-
 }
 
 /* ── iPhone Safari: date field overflow fix ── */
