@@ -436,13 +436,10 @@ textarea::placeholder {
   }
 
 .print-footer {
-  position: fixed;
-  left: 50%;
-  right: auto;
-  bottom: 6mm;
-  transform: translateX(-50%);
-  width: max-content;
+  position: static;
+  margin-top: 10mm;
   text-align: center;
+  break-inside: avoid;
 }
 
 .print-footer p {
