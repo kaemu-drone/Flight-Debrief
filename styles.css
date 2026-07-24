@@ -449,7 +449,28 @@ textarea::placeholder {
   line-height: 1.4;
   letter-spacing: 0.08em;
   white-space: nowrap;
-}}
+}
+  
+html,
+body {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.print-sheet {
+  height: auto !important;
+  min-height: 0 !important;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+
+
+
+
+
+
+}
 
 /* ── iPhone Safari: date field overflow fix ── */
 .field-group--inline > .field {
